@@ -1,20 +1,46 @@
 <!DOCTYPE HTML>
 <html ng-app="chatroom">
   <head>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body ng-controller="mainCtrl">
-    <div class="main-container">
-      <h1> DevMountain Chat Room </h1>
-      <form ng-submit="postData()">
-        <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
+
+    <header>
+      <section class="container">
+        <div class="header-container">
+          <img src="https://devmounta.in/img/logowhiteblue.png" alt="DevMountain Logo">
+          <h1>| CHAT ROOM</h1>
+        </div>
+        <div id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+
+      <section class="container messages-container">
+        <div class="message-container" ng-repeat="message in messages | orderBy: message.createdAt : false" ng-if="message.text">
+          <div class="profilepic"></div>
+          <div class="message">
+            <p class="timestamp">{{message.createdAt}}</p>
+            <p class="text">{{message.text}}</p>
+          </div>
+        </div>
+      </section>
+
+    <main>
+    <footer>
+      <form class="container input-container" ng-submit="postData()">
+        <button>+</button>
+        <input id="input-box" type="text" ng-model="message" placeholder="Message">
       </form>
-      <div class="messages-container">
-        <p ng-repeat="message in messages"> {{message.text}} </p>
-      </div>
-    </div>
+    </footer>
+
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="js/app.js"></script>
