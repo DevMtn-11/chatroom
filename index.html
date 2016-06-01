@@ -24,7 +24,7 @@
     <main>
 
       <section class="container messages-container">
-        <div class="message-container" ng-repeat="message in messages | orderBy: message.createdAt : false" ng-if="message.text">
+        <div class="message-container" ng-repeat="message in messages" ng-if="message.text">
           <div class="profilepic"></div>
           <div class="message">
             <p class="timestamp">{{message.createdAt}}</p>
@@ -36,13 +36,15 @@
     <main>
     <footer>
       <form class="container input-container" ng-submit="postData()">
-        <button>+</button>
+        <button id="plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
         <input id="input-box" type="text" ng-model="message" placeholder="Message">
+        <button id="smile"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
       </form>
     </footer>
 
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="https://use.fontawesome.com/716f5d69e5.js"></script>
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
     <script src="js/parseService.js"></script>

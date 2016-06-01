@@ -135,7 +135,7 @@ form {
   flex-direction: row;
 }
 
-form button {
+form #plus {
   width: 2.5rem;
   background: none;
   border-style: solid;
@@ -155,6 +155,23 @@ form input {
   outline: none;
   border: 0.15rem solid hsla(206, 26%, 25%, 0.5);
   border-left: none;
-  border-radius: 0 0.3rem 0.3rem 0;
+  border-right: none;
   font-size: 0.8rem;
+}
+
+form #smile {
+  width: 2.5rem;
+  background: none;
+  border-style: solid;
+  border-radius: 0 0.3rem 0.3rem 0;
+  border-color: hsla(206, 26%, 25%, 0.5);
+  border-left: none;
+  outline: none;
+  font-size: 1.5rem;
+  color: hsla(206, 26%, 25%, 0.5);
+  cursor: pointer;
+}
+
+.fa {
+  font-size: 0.2rem;
 }
